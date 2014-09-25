@@ -5,5 +5,7 @@ public class Hello{
 		double a=0.0 ;
 		a=(double) (1/3);
 		System.out.println(a);
+		//System.out.println("integrate the github with Sumblime text by Git plugin.");
+		system.out.println("first git commit");
 	}
 }
