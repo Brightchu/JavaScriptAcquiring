@@ -9,5 +9,7 @@ public class Hello{
 		System.out.println("first git commit");
 		System.out.println("integrate the github with Sumblime text by Git plugin.");
 
+		System.out.println("");
+
 	}
 }
