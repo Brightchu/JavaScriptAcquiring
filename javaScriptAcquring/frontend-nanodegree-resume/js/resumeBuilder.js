@@ -52,9 +52,4 @@ var bio={
     }
 };
 
-bio.city = "Hangzhou";
-bio["homeCity"] = "Nantong";
-
 $("#main").append(bio.favorites.books);
-$("#main").append(bio.city+"<br>");
-$("#main").append(bio.homeCity+"<br>");
