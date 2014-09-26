@@ -37,3 +37,19 @@ var oldName = "albERt EINstEiN";
 
 // Did your code work? The line below will tell you!
 console.log(finalName);
+
+var skills=["JS","C++","Python","Ruby"];
+//$("#main").append(skills.length);
+
+var bio={
+    "name" : "Bright Chu",
+    "age"  : "27",
+    "skills": skills ,
+    "favorites":{
+        "instruments": "guitar",
+        "books": ["1984<br>","Kafka on the shore<br>"],
+        "bands": "Beatles"
+    }
+};
+
+$("#main").append(bio.favorites.books);
