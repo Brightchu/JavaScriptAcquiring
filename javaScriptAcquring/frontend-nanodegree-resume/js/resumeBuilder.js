@@ -60,6 +60,15 @@ $("#main").append(bio.city+"<br>");
 $("#main").append(bio.homeCity+"<br>");
 $("#main").append(bio["favorites"]["bands"]+"<br>");
 
+if (bio.skills.length>0){
+    $("#header").append(HTMLskillsStart);
+
+    var formattedSkills = HTMLskills.replace("%data%",bio.skills[0]);
+    $("#skills").append(formattedSkills);
+    var formattedSkills = HTMLskills.replace("%data%",bio.skills[1]);
+    $("#skills").append(formattedSkills);
+};
+
 //testing DOM (document object model) and element methods
 
 // testing JSON. validate JSON format online http://jsonlint.com/, 
@@ -81,5 +90,15 @@ var education = {
     ]
 };
 console.log(education.schools[1].name);
-$("#education").append("<p>"+education.schools[1].name+"</p>");
 
+// var HTMLschoolStart = "<div class='education-entry'></div>";
+// var HTMLschoolName = "<a href='#'>%data%";
+// var HTMLschoolDegree = " -- %data%</a>";
+// var HTMLschoolDates = "<div class='date-text'>%data%</div>";
+// var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
+// var HTMLschoolMajor = "<em><br>Major: %data%</em>"
+$("#education").append(HTMLschoolStart);
+
+ var formattedEdu = HTMLschoolName.replace("#","http://www.zju.edu.cn").replace("%data%", education.schools[0].name)+HTMLschoolDegree.replace("%data%",education.schools[0].degree)+"\n"+HTMLschoolDates+HTMLschoolLocation.replace("%data%",education.schools[0].city)+"\n"+HTMLschoolMajor.replace("%data%",education.schools[0].major);
+ console.log(formattedEdu);
+ $("#education").append(formattedEdu);
