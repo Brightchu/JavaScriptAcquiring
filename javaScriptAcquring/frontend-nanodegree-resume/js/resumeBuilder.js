@@ -59,3 +59,27 @@ $("#main").append(bio.favorites.books);
 $("#main").append(bio.city+"<br>");
 $("#main").append(bio.homeCity+"<br>");
 $("#main").append(bio["favorites"]["bands"]+"<br>");
+
+//testing DOM (document object model) and element methods
+
+// testing JSON. validate JSON format online http://jsonlint.com/, 
+//take care only copy the object {...} other than the declaration of the object var obj={}; including the semicolon should be omitted.
+var education = {
+    "schools":[
+    {
+        "name" : "Zhejiang Univ",
+        "city" : "Hangzhou",
+        "degree" : "BA",
+        "major" : ["Math", "EE"]
+    },
+    {
+      "name" : "Beijing Univ",
+        "city" : "Beijing",
+        "degree" : "MS",
+        "major" : ["EE"  ]
+    }
+    ]
+};
+console.log(education.schools[1].name);
+$("#education").append("<p>"+education.schools[1].name+"</p>");
+
