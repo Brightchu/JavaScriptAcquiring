@@ -102,6 +102,45 @@ $("#education").append(HTMLschoolStart);
 for (var i=0; i<education.schools.length;i++){
    var formattedEdu = HTMLschoolName.replace("#","http://www.zju.edu.cn").replace("%data%", education.schools[i].name)+HTMLschoolDegree.replace("%data%",education.schools[i].degree)+"\n"+HTMLschoolDates+HTMLschoolLocation.replace("%data%",education.schools[i].city)+"\n"+HTMLschoolMajor.replace("%data%",education.schools[i].major);
    console.log(formattedEdu);
-   $("#education").append(formattedEdu);
+   $(".education-entry:last").append(formattedEdu);
 }
 
+
+var workExp = {
+    "jobs" :[
+    {
+        "company":"Huawei",
+        "title" : "engnineer",
+        "workdate" : "2015-2016",
+        "location" : "Hangzhou",
+        "description" : "5G wireless network researching"
+    },
+    {
+        "company":"Alibaba",
+        "title" : "Programme Manager",
+        "workdate" : "since 2016",
+        "location" : "Hangzhou",
+        "description" : "future Internet products"
+    }
+    ]
+};
+
+console.log("worExp's lenght is "+workExp.jobs.length);
+console.log(workExp.jobs.length!==0);
+// var HTMLworkStart = "<div class='work-entry'></div>";
+// var HTMLworkEmployer = "<a href='#'>%data%";
+// var HTMLworkTitle = " - %data%</a>";
+// var HTMLworkDates = "<div class='date-text'>%data%</div>";
+// var HTMLworkLocation = "<div class='location-text'>%data%</div>";
+// var HTMLworkDescription = "<p><br>%data%</p>";
+if (workExp.jobs.length!==0){    
+  for( tempJobs in workExp.jobs){
+    console.log(workExp.jobs[tempJobs].company);
+
+    $("#workExperience").append(HTMLworkStart);
+
+    var htmlJobs = HTMLworkEmployer.replace("%data%",workExp.jobs[tempJobs].company)+HTMLworkTitle.replace("%data%",workExp.jobs[tempJobs].title)+HTMLworkDates.replace("%data%",workExp.jobs[tempJobs].workdate)+HTMLworkLocation.replace("%data%",workExp.jobs[tempJobs].location)+HTMLworkDescription.replace("%data%",workExp.jobs[tempJobs].description);
+    $(".work-entry:last").append(htmlJobs);
+    console.log(htmlJobs);
+}
+}
