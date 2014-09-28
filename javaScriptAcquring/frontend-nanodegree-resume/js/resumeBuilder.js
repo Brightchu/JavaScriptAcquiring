@@ -11,7 +11,7 @@ $("#header").prepend(formattedName);
 var oldName = "albERt EINstEiN";
 
 
-    var finalName = oldName;
+var finalName = oldName;
     // Your code goes here!
     var finalNameTemp=oldName.split(" ");
     
@@ -83,11 +83,11 @@ var education = {
     },
     {
       "name" : "Beijing Univ",
-        "city" : "Beijing",
-        "degree" : "MS",
-        "major" : ["EE"  ]
-    }
-    ]
+      "city" : "Beijing",
+      "degree" : "MS",
+      "major" : ["EE"  ]
+  }
+  ]
 };
 console.log(education.schools[1].name);
 
@@ -99,6 +99,9 @@ console.log(education.schools[1].name);
 // var HTMLschoolMajor = "<em><br>Major: %data%</em>"
 $("#education").append(HTMLschoolStart);
 
- var formattedEdu = HTMLschoolName.replace("#","http://www.zju.edu.cn").replace("%data%", education.schools[0].name)+HTMLschoolDegree.replace("%data%",education.schools[0].degree)+"\n"+HTMLschoolDates+HTMLschoolLocation.replace("%data%",education.schools[0].city)+"\n"+HTMLschoolMajor.replace("%data%",education.schools[0].major);
- console.log(formattedEdu);
- $("#education").append(formattedEdu);
+for (var i=0; i<education.schools.length;i++){
+   var formattedEdu = HTMLschoolName.replace("#","http://www.zju.edu.cn").replace("%data%", education.schools[i].name)+HTMLschoolDegree.replace("%data%",education.schools[i].degree)+"\n"+HTMLschoolDates+HTMLschoolLocation.replace("%data%",education.schools[i].city)+"\n"+HTMLschoolMajor.replace("%data%",education.schools[i].major);
+   console.log(formattedEdu);
+   $("#education").append(formattedEdu);
+}
+
