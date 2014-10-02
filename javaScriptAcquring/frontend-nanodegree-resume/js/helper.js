@@ -88,6 +88,12 @@ function logClicks(x,y) {
 
 $(document).click(function(loc) {
   // your code goes here!
+  // we could use event.pageX and use function() with out loc.
+  var x=loc.pageX;
+  var y=loc.pageY;
+  //$("#main").append("pageX: " + x + ", pageY: " + y );
+
+  logClicks(x,y);
 });
 
 

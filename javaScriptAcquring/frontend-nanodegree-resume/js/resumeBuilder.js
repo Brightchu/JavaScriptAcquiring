@@ -144,3 +144,8 @@ if (workExp.jobs.length!==0){
     console.log(htmlJobs);
 }
 }
+
+$( "#main" ).prepend("<div id='clickShow'></div>" );
+$( document ).on( "mousemove", function( ) {
+  $( "#clickShow" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
+});
